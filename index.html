@@ -4,58 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Punta Ingeniería & Proyectos S.A.C.</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CONFIGURACIÓN DE COLORES -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lapuntaGris: '#3b424a',
+                        lapuntaGrisFondo: '#2c333a', /* Para el fondo de servicios */
+                        lapuntaOscuro: '#16202c',
+                        lapuntaAmarillo: '#ffcc00',
+                        lapuntaAzulTexto: '#003a6b' /* Azul oscuro para los títulos de tarjetas */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ESTILOS EXTRA PARA LA ANIMACIÓN Y LA ESQUINA DOBLADA -->
+    <style>
+        /* 1. Magia de la animación: Ocultamos los elementos y los bajamos 40px */
+        .revelar {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        /* Cuando JS le agrega esta clase, el elemento aparece y sube a su posición normal */
+        .revelar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 2. Truco para la esquina amarilla doblada de las tarjetas */
+        .esquina-amarilla::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 24px 24px 0; /* Tamaño de la esquina */
+            border-style: solid;
+            border-color: transparent #ffcc00 transparent transparent;
+        }
+    </style>
 </head>
-<body>
+<body class="m-0 p-0 font-sans box-border bg-gray-100">
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar">
-        <a href="index.html" class="logo-link">
-            <img src="assets/PUNTA.png" alt="Logo La Punta" class="logo-img"> 
-        </a>
-
-        <!-- Botón de hamburguesa para celulares -->
-        <div class="menu-toggle" id="mobile-menu">
+    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
+    <nav class="sticky top-0 z-50 bg-lapuntaGris flex justify-between items-center px-6 md:px-12 py-4 shadow-lg">
+    <a href="index.html" class="flex items-center no-underline" aria-label="Ir al inicio de La Punta S.A.C.">
+       <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
+    </a>
+        <button id="mobile-menu" class="md:hidden text-white text-3xl cursor-pointer border-2 border-lapuntaAmarillo px-3 rounded-lg">
             ☰
+        </button>
+        <div id="navbar-links" class="hidden md:flex absolute md:static top-[70px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
+            <a href="#" class="text-lapuntaAmarillo font-semibold hover:text-lapuntaAmarillo">Inicio</a> 
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Nosotros</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Servicios</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Galería</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Contacto</a>
+            <a href="#" class="md:hidden bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full w-4/5 mx-auto mt-4">📱 Cotiza ahora</a>
         </div>
-
-        <div class="enlaces" id="navbar-links">
-            <a href="#" style="color: #ffcc00;">Inicio</a> 
-            <a href="#">Nosotros</a>
-            <a href="#">Servicios</a>
-            <a href="#">Galería</a>
-            <a href="#">Equipo</a>
-            <a href="#">Contacto</a>
-            <!-- Botón de cotizar exclusivo para el menú de celular -->
-            <a href="#" class="btn-cotizar-mobile">📱 Cotiza ahora</a>
-        </div>
-
-        <!-- Botón de cotizar de escritorio -->
-        <a href="#" class="btn-cotizar btn-desktop">
+        <a href="#" class="hidden md:flex bg-lapuntaAmarillo text-black py-3 px-6 rounded-lg font-bold items-center gap-2 hover:scale-105 transition-transform">
             <span>📱</span> Cotiza ahora
         </a>
     </nav>
 
-    <!-- SECCIÓN PRINCIPAL CON IMAGEN DE FONDO -->
-    <section class="hero-section">
-        <div class="hero-contenido">
-            <h1 class="hero-titulo">
-                Servicios integrales de ingeniería y construcción<br>
-                para el sector industrial y minero
+    <!-- ================= SECCIÓN PRINCIPAL ================= -->
+    <section class="relative h-[80vh] flex items-center px-8 md:px-16 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 30, 60, 0.7), rgba(0, 30, 60, 0.7)), url('assets/fondo_punta.jpg');">
+        <div class="max-w-4xl z-10 revelar"> <!-- Agregamos 'revelar' aquí -->
+            <h1 class="text-lapuntaAmarillo text-4xl md:text-[55px] font-black uppercase italic leading-tight mb-5 drop-shadow-lg">
+                Servicios integrales de ingeniería y construcción
             </h1>
-            <p class="hero-subtitulo">
-                La Punta Ingeniería & Proyectos S.A.C.: diseño, desarrollo de proyectos, obras civiles, fabricación de estructuras y mantenimiento industrial en el sur del Perú.
+            <p class="text-white text-lg md:text-2xl font-normal drop-shadow-md">
+                La Punta Ingeniería & Proyectos S.A.C.: diseño, obras civiles, fabricación de estructuras y mantenimiento industrial en el sur del Perú.
             </p>
         </div>
     </section>
+
+    <!-- ================= SECCIÓN ESTADÍSTICAS (LOS NÚMEROS ANIMADOS) ================= -->
+    <section class="bg-[#0b131e] py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+            <div class="revelar flex flex-col items-center">
+                <div class="text-4xl md:text-5xl font-black text-lapuntaAmarillo mb-2">
+                    <span class="contador" data-target="10">0</span>+
+                </div>
+                <p class="text-gray-300 text-sm md:text-base">Años de experiencia</p>
+            </div>
+            <!-- delay-100 hace que esta caja suba un instante después que la primera -->
+            <div class="revelar flex flex-col items-center" style="transition-delay: 100ms;">
+                <div class="text-4xl md:text-5xl font-black text-lapuntaAmarillo mb-2">
+                    <span class="contador" data-target="150">0</span>+
+                </div>
+                <p class="text-gray-300 text-sm md:text-base">Proyectos ejecutados</p>
+            </div>
+            <div class="revelar flex flex-col items-center" style="transition-delay: 200ms;">
+                <div class="text-4xl md:text-5xl font-black text-lapuntaAmarillo mb-2">
+                    <span class="contador" data-target="0">0</span>
+                </div>
+                <p class="text-gray-300 text-sm md:text-base">Accidentes: nuestra meta</p>
+            </div>
+            <div class="revelar flex flex-col items-center" style="transition-delay: 300ms;">
+                <div class="text-4xl md:text-5xl font-black text-lapuntaAmarillo mb-2">
+                    <span class="contador" data-target="100">0</span>%
+                </div>
+                <p class="text-gray-300 text-sm md:text-base">Compromiso con calidad</p>
+            </div>
+        </div>
+    </section>
+
+ <!-- ================= SECCIÓN SERVICIOS CON FONDO ================= -->
+    <section class="py-20 px-6 bg-cover bg-center relative" 
+             style="background-image: linear-gradient(rgba(44, 51, 58, 0.85), rgba(44, 51, 58, 0.85)), url('assets/FONDO_OSCURO.jpg');">
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            
+            <!-- Encabezado de la sección -->
+            <div class="text-center revelar mb-16">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-0.5 w-10 bg-white"></div>
+                    <span class="text-white font-bold tracking-widest text-xs uppercase">Servicios que realizamos</span>
+                    <div class="h-0.5 w-10 bg-white"></div>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-lapuntaAmarillo italic mb-6">Soluciones metalmecánicas integrales</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Del diseño en Tekla y ANSYS al montaje en obra: cubrimos todo el ciclo de vida de tus estructuras y componentes.</p>
+            </div>
+
+            <!-- Grilla de Tarjetas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Tarjeta 1 -->
+                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                        <span class="text-2xl text-lapuntaAzulTexto">📐</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Diseño e ingeniería</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ingeniería de precisión de estructuras metálicas con software Tekla y ANSYS.</p>
+                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 100ms;">
+                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                        <span class="text-2xl text-lapuntaAzulTexto">🏭</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Fabricación</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Producción de estructuras metalmecánicas con maquinaria avanzada y soldadura especializada.</p>
+                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 200ms;">
+                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                        <span class="text-2xl text-lapuntaAzulTexto">🏗️</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Montaje</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Montaje de estructuras y coberturas bajo estrictos estándares de seguridad y calidad.</p>
+                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 300ms;">
+                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                        <span class="text-2xl text-lapuntaAzulTexto">🛡️</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Reparación y blindaje</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Recuperación, blindaje y reconstrucción de cucharones, blades y componentes mineros.</p>
+                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SCRIPTS ================= -->
     <script>
+        // 1. Menú Móvil
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('navbar-links');
-
         mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
         });
-    </script>
 
+        // 2. Animación de "Revelar" al hacer Scroll
+        // Observa cuándo un elemento entra en la pantalla
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Si el elemento es visible en la pantalla...
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Le agrega la clase que lo mueve hacia arriba
+                }
+            });
+        }, { threshold: 0.1 }); // Se activa cuando el 10% del elemento es visible
+
+        // Le aplicamos el observador a todo lo que tenga la clase "revelar"
+        document.querySelectorAll('.revelar').forEach(el => observer.observe(el));
+
+        // 3. Animación de los Números Contadores
+        const observerContador = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target'); // El número final al que debe llegar
+                    const duration = 2000; // Duración: 2 segundos
+                    const start = performance.now();
+                    
+                    const update = (currentTime) => {
+                        const elapsed = currentTime - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Fórmula matemática para que frene suavemente al final
+                        const easeOut = 1 - Math.pow(1 - progress, 4);
+                        
+                        counter.innerText = Math.floor(easeOut * target);
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(update); // Sigue animando
+                        } else {
+                            counter.innerText = target; // Asegura que llegue al número exacto al final
+                        }
+                    };
+                    requestAnimationFrame(update);
+                    obs.unobserve(counter); // Lo desactiva para que no se vuelva a animar si subes y bajas
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.contador').forEach(el => observerContador.observe(el));
+    </script>
 </body>
 </html>
