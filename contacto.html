@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | La Punta Ingeniería & Proyectos S.A.C.</title>
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CONFIGURACIÓN DE COLORES -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lapuntaGris: '#3b424a',
+                        lapuntaOscuro: '#16202c',
+                        lapuntaAmarillo: '#ffcc00',
+                        lapuntaAzulTexto: '#003a6b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ESTILOS DE ANIMACIÓN Y FORMULARIO -->
+    <style>
+        .revelar {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .revelar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Estilos limpios para los campos del formulario */
+        .campo {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            background-color: #f9fafb;
+            color: #1f2937;
+            font-size: 0.875rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+        }
+        .campo:focus {
+            border-color: #003a6b;
+            box-shadow: 0 0 0 3px rgba(0, 58, 107, 0.2);
+            background-color: #ffffff;
+        }
+        .campo::placeholder {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
+    <nav class="sticky top-0 z-50 bg-lapuntaGris flex justify-between items-center px-6 md:px-12 py-4 shadow-lg">
+        <a href="index.html" class="flex items-center no-underline">
+            <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
+        </a>
+        <button id="mobile-menu" class="md:hidden text-white text-3xl cursor-pointer border-2 border-lapuntaAmarillo px-3 rounded-lg hover:bg-white/10">
+            ☰
+        </button>
+        <div id="navbar-links" class="hidden md:flex absolute md:static top-[90px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
+            <a href="index.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Inicio</a> 
+            <a href="nosotros.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Nosotros</a>
+            <a href="servicios.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Servicios</a>
+            <a href="galeria.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Galería</a>
+            <a href="equipo.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Equipo</a>
+            <a href="contacto.html" class="text-lapuntaAmarillo font-semibold hover:text-lapuntaAmarillo transition">Contacto</a> <!-- Pestaña Activa -->
+            <a href="https://wa.me/51987180419" target="_blank" class="md:hidden inline-block bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full mx-auto w-4/5 mt-4 no-underline">📱 Cotiza ahora</a>
+        </div>
+        <a href="https://wa.me/51987180419" target="_blank" class="hidden md:flex bg-lapuntaAmarillo hover:bg-white text-[#111] py-3 px-6 rounded-lg no-underline font-bold items-center gap-2 whitespace-nowrap transition-transform hover:scale-105">
+            <span>📱</span> Cotiza ahora
+        </a>
+    </nav>
+
+    <main class="flex-grow">
+        
+        <!-- ================= CABECERA DE CONTACTO ================= -->
+        <section class="relative bg-lapuntaAzulTexto py-16 text-center text-white">
+            <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6">
+                <!-- Migas de pan -->
+                <nav class="mb-4 text-sm text-gray-300 flex justify-center items-center gap-2">
+                    <a href="index.html" class="hover:text-lapuntaAmarillo transition">Inicio</a>
+                    <span>›</span>
+                    <span class="font-semibold text-white">Contacto</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-black text-lapuntaAmarillo italic mb-4">Contáctenos</h1>
+                <p class="text-lg text-gray-200">
+                    Cuéntanos tu requerimiento y te enviaremos una propuesta técnica.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= DATOS Y FORMULARIO ================= -->
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16">
+                
+                <!-- Columna Izquierda: Datos de Contacto -->
+                <div class="revelar">
+                    <h2 class="text-3xl font-black text-lapuntaAzulTexto italic mb-4">Hablemos de tu proyecto</h2>
+                    <p class="text-gray-600 mb-10">Atendemos proyectos metalmecánicos para industria y minería en todo el Perú.</p>
+                    
+                    <ul class="space-y-8">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-50 text-lapuntaAzulTexto w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 shadow-sm">📍</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">Dirección Principal</h3>
+                                <p class="text-gray-600 text-sm mt-1">Calle San Martín N° 236<br>Punta de Bombón - Islay - Arequipa</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-50 text-lapuntaAzulTexto w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 shadow-sm">📞</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">Teléfono / WhatsApp</h3>
+                                <a href="tel:987180419" class="block text-gray-600 hover:text-lapuntaAmarillo transition-colors text-sm mt-1">987 180 419</a>
+                                <a href="https://wa.me/51987180419" target="_blank" class="block text-lapuntaAzulTexto hover:text-lapuntaAmarillo transition-colors text-sm mt-1 font-semibold">Escríbenos ahora para una cotización rápida</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-50 text-lapuntaAzulTexto w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 shadow-sm">✉️</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">Correos Electrónicos</h3>
+                                <a href="mailto:operaciones@lapuntaingenieria.com" class="block text-gray-600 hover:text-lapuntaAmarillo transition-colors text-sm mt-1 break-all">operaciones@lapuntaingenieria.com</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="bg-blue-50 text-lapuntaAzulTexto w-12 h-12 rounded-full flex items-center justify-center text-xl shrink-0 shadow-sm">⏱️</div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 text-lg">Horario de atención</h3>
+                                <p class="text-gray-600 text-sm mt-1">Lunes a viernes: 8:00 a.m. – 6:00 p.m.<br>Sábados: 8:00 a.m. – 1:00 p.m.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna Derecha: Formulario -->
+                <div class="revelar">
+                    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative">
+                        <!-- Esquina decorativa -->
+                        <div class="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-t-transparent border-r-[40px] border-r-lapuntaAmarillo"></div>
+                        
+                        <h2 class="text-2xl font-black text-lapuntaAzulTexto mb-6">Envíanos un mensaje</h2>
+                        
+                        <!-- Formulario conectado a Formspree o WhatsApp -->
+                        <form id="form-contacto" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="nombre" class="block text-sm font-bold text-gray-700 mb-1">Nombre completo <span class="text-red-500">*</span></label>
+                                    <input type="text" id="nombre" required class="campo" placeholder="Tu nombre">
+                                </div>
+                                <div>
+                                    <label for="empresa" class="block text-sm font-bold text-gray-700 mb-1">Empresa</label>
+                                    <input type="text" id="empresa" class="campo" placeholder="Nombre de tu empresa">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="email" class="block text-sm font-bold text-gray-700 mb-1">Correo electrónico <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" required class="campo" placeholder="correo@empresa.com">
+                                </div>
+                                <div>
+                                    <label for="telefono" class="block text-sm font-bold text-gray-700 mb-1">Teléfono / WhatsApp <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="telefono" required class="campo" placeholder="Tu número">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="servicio" class="block text-sm font-bold text-gray-700 mb-1">Servicio de interés</label>
+                                <select id="servicio" class="campo cursor-pointer">
+                                    <option value="Sin especificar">Selecciona una opción</option>
+                                    <option value="Ingeniería y desarrollo">Ingeniería y desarrollo de proyectos</option>
+                                    <option value="Obras civiles">Construcción de obras civiles</option>
+                                    <option value="Estructuras metálicas">Fabricación de estructuras metálicas</option>
+                                    <option value="Alquiler de maquinaria">Alquiler de maquinaria</option>
+                                    <option value="Mantenimiento">Mantenimiento industrial</option>
+                                    <option value="Otro">Otro requerimiento</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensaje" class="block text-sm font-bold text-gray-700 mb-1">Mensaje <span class="text-red-500">*</span></label>
+                                <textarea id="mensaje" rows="4" required class="campo resize-none" placeholder="Cuéntanos sobre tu proyecto o duda..."></textarea>
+                            </div>
+
+                            <button type="button" onclick="enviarPorWhatsApp()" class="w-full bg-lapuntaAzulTexto hover:bg-lapuntaOscuro text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                <span>📤</span> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= MAPA DE UBICACIÓN ================= -->
+        <section class="py-12 bg-white border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-2xl font-black text-lapuntaAzulTexto italic mb-8">Nuestra Ubicación</h2>
+                <div class="w-full h-96 rounded-xl overflow-hidden shadow-md border border-gray-300">
+                    <!-- Mapa apuntando a Punta de Bombón -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3822.42841458925!2d-71.7958!3d-17.1706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91448b1111111111%3A0x1111111111111111!2sCalle%20San%20Martin%20236%2C%20Punta%20de%20Bombon%2004526!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<!-- ================= PIE DE PÁGINA (FOOTER) UNIFICADO ================= -->
+    <footer class="bg-lapuntaGris pt-16 pb-8 px-6 text-gray-300 text-sm border-t-4 border-lapuntaAmarillo">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-gray-600 pb-10 mb-8">
+            
+            <!-- Columna 1: Marca -->
+            <div>
+                <a href="index.html">
+                    <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 mb-6 object-contain">
+                </a>
+                <p class="leading-relaxed mb-6">
+                    La Punta Ingeniería & Proyectos S.A.C.: Expertos en ingeniería y desarrollo de proyectos, construcción de obras civiles, fabricación de estructuras y mantenimiento industrial.
+                </p>
+                <!-- Redes Sociales -->
+                <div class="flex gap-3">
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="Facebook">f</a>
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Enlaces</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="index.html" class="hover:text-lapuntaAmarillo transition-colors">› Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-lapuntaAmarillo transition-colors">› Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Servicios</a></li>
+                    <li><a href="galeria.html" class="hover:text-lapuntaAmarillo transition-colors">› Galería</a></li>
+                    <li><a href="equipo.html" class="hover:text-lapuntaAmarillo transition-colors">› Equipo</a></li>
+                    <li><a href="contacto.html" class="hover:text-lapuntaAmarillo transition-colors">› Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Servicios</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Ingeniería de proyectos</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Obras civiles</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Estructuras metálicas</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Alquiler de maquinaria</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Mantenimiento industrial</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Contacto -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Contacto</h3>
+                <ul class="space-y-4 font-medium">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📍</span> 
+                        <span>Calle San Martín N° 236,<br>Punta de Bombón - Islay - Arequipa</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📞</span> 
+                        <a href="tel:987180419" class="hover:text-lapuntaAmarillo transition-colors">987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">💬</span> 
+                        <a href="https://wa.me/51987180419" target="_blank" class="hover:text-lapuntaAmarillo transition-colors">WhatsApp: +51 987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">✉️</span> 
+                        <a href="mailto:operaciones@lapuntaingenieria.com" class="hover:text-lapuntaAmarillo transition-colors break-all">operaciones@lapuntaingenieria.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- Derechos reservados -->
+        <div class="max-w-7xl mx-auto text-center md:text-left text-gray-500 text-xs">
+            <p>© 2026 La Punta Ingeniería & Proyectos S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <!-- SCRIPT DE ANIMACIONES Y FORMULARIO -->
+    <script>
+        // Menú Móvil
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('navbar-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.revelar').forEach(el => observer.observe(el));
+
+        // Enviar formulario por WhatsApp
+        function enviarPorWhatsApp() {
+            const nombre = document.getElementById('nombre').value;
+            const empresa = document.getElementById('empresa').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Validación básica
+            if(!nombre || !email || !telefono || !mensaje) {
+                alert("Por favor, completa todos los campos obligatorios (*).");
+                return;
+            }
+
+            // Armar el texto para WhatsApp
+            const texto = `Hola, mi nombre es *${nombre}* de la empresa *${empresa || 'Independiente'}*.\n\n` +
+                          `Estoy interesado en el servicio de: *${servicio}*.\n\n` +
+                          `*Mensaje:* ${mensaje}\n\n` +
+                          `*Mis datos de contacto:*\n` +
+                          `Correo: ${email}\n` +
+                          `Teléfono: ${telefono}`;
+
+            // Número de WhatsApp de La Punta S.A.C.
+            const numeroDestino = "51987180419";
+            const url = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(texto)}`;
+            
+            // Abrir WhatsApp en una pestaña nueva
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | La Punta Ingeniería & Proyectos S.A.C.</title>
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CONFIGURACIÓN DE COLORES -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lapuntaGris: '#3b424a',
+                        lapuntaOscuro: '#16202c',
+                        lapuntaAmarillo: '#ffcc00',
+                        lapuntaAzulTexto: '#003a6b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ANIMACIONES BÁSICAS -->
+    <style>
+        .revelar {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .revelar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .esquina-doblada::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 30px 30px 0;
+            border-style: solid;
+            border-color: transparent #ffcc00 transparent transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
+    <nav class="sticky top-0 z-50 bg-lapuntaGris flex justify-between items-center px-6 md:px-12 py-4 shadow-lg">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center no-underline" aria-label="Ir al inicio de La Punta S.A.C.">
+            <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
+        </a>
+        <!-- Menú Hamburguesa -->
+        <button id="mobile-menu" class="md:hidden text-white text-3xl border-2 border-lapuntaAmarillo px-3 rounded-lg hover:bg-white/10">☰</button>
+        <!-- Enlaces -->
+        <div id="navbar-links" class="hidden md:flex absolute md:static top-[90px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
+            <a href="index.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Inicio</a> 
+            <a href="nosotros.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Nosotros</a>
+            <a href="servicios.html" class="text-lapuntaAmarillo font-semibold hover:text-lapuntaAmarillo transition">Servicios</a> <!-- Resaltado -->
+            <a href="galeria.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Galería</a>
+            <a href="equipo.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Equipo</a>
+            <a href="contacto.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Contacto</a>
+            <a href="https://wa.me/51987180419" target="_blank" class="md:hidden bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full w-4/5 mx-auto mt-4">📱 Cotiza ahora</a>
+        </div>
+        <a href="https://wa.me/51987180419" target="_blank" class="hidden md:flex bg-lapuntaAmarillo hover:bg-white text-black font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105">
+            📱 Cotiza ahora
+        </a>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- ================= CABECERA DE LA PÁGINA ================= -->
+        <section class="relative bg-lapuntaAzulTexto py-16 md:py-24 text-center text-white">
+            <div class="absolute inset-0 z-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6">
+                <!-- Migas de pan -->
+                <nav class="mb-4 text-sm text-gray-300 flex justify-center items-center gap-2">
+                    <a href="index.html" class="hover:text-lapuntaAmarillo transition">Inicio</a>
+                    <span>›</span>
+                    <span class="font-semibold text-white">Servicios</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-black text-lapuntaAmarillo italic mb-4">Servicios que realizamos</h1>
+                <p class="text-lg md:text-xl text-gray-200">
+                    Soluciones de ingeniería, construcción civil, montaje de estructuras y metalmecánica para el sur del país.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= LISTA DE SERVICIOS DETALLADOS ================= -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto space-y-20">
+
+                <!-- Servicio 1: Diseño e Ingeniería -->
+                <div class="revelar">
+                    <h2 class="text-3xl font-black text-lapuntaAzulTexto italic mb-8 border-l-4 border-lapuntaAmarillo pl-4">Diseño e Ingeniería de Proyectos</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="relative bg-lapuntaGris rounded-xl p-8 overflow-hidden group shadow-lg">
+                            <div class="absolute inset-0 bg-lapuntaOscuro opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative z-10">
+                                <span class="text-5xl mb-4 block">📐</span>
+                                <h3 class="text-2xl font-bold text-white mb-4">Precisión y Normativa</h3>
+                                <p class="text-gray-300 mb-6">Desarrollo de ingeniería básica y de detalle para estructuras metálicas y obras civiles, utilizando software de vanguardia para asegurar el cumplimiento de normativas vigentes.</p>
+                                <a href="https://wa.me/51987180419" target="_blank" class="inline-block bg-lapuntaAmarillo text-black text-sm font-bold py-2 px-6 rounded hover:bg-white transition-colors">Cotizar Ingeniería</a>
+                            </div>
+                        </div>
+                        <div class="h-64 md:h-full bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Diseño de ingeniería" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 2: Obras Civiles (Nuevo para La Punta) -->
+                <div class="revelar">
+                    <h2 class="text-3xl font-black text-lapuntaAzulTexto italic mb-8 border-l-4 border-lapuntaAmarillo pl-4">Construcción de Obras Civiles</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="h-64 md:h-full bg-gray-200 rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
+                            <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Obras Civiles" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative bg-lapuntaAzulTexto rounded-xl p-8 overflow-hidden group shadow-lg order-1 md:order-2">
+                            <div class="absolute inset-0 bg-lapuntaOscuro opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative z-10">
+                                <span class="text-5xl mb-4 block">🏗️</span>
+                                <h3 class="text-2xl font-bold text-white mb-4">Sólidas Bases</h3>
+                                <p class="text-gray-300 mb-6">Ejecución de proyectos de infraestructura civil. Movimiento de tierras, cimentaciones para maquinaria pesada, lozas, muros de contención y edificación industrial.</p>
+                                <a href="https://wa.me/51987180419" target="_blank" class="inline-block bg-lapuntaAmarillo text-black text-sm font-bold py-2 px-6 rounded hover:bg-white transition-colors">Cotizar Obra Civil</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 3: Fabricación Estructuras -->
+                <div class="revelar">
+                    <h2 class="text-3xl font-black text-lapuntaAzulTexto italic mb-8 border-l-4 border-lapuntaAmarillo pl-4">Fabricación de Estructuras Metálicas</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="relative bg-lapuntaGris rounded-xl p-8 overflow-hidden group shadow-lg">
+                            <div class="absolute inset-0 bg-lapuntaOscuro opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative z-10">
+                                <span class="text-5xl mb-4 block">🏭</span>
+                                <h3 class="text-2xl font-bold text-white mb-4">Producción Especializada</h3>
+                                <p class="text-gray-300 mb-6">Fabricación en taller de tijerales, naves industriales, plataformas, barandas, grating y soportes metálicos pesados con estricto control de soldadura y protección anticorrosiva.</p>
+                                <a href="https://wa.me/51987180419" target="_blank" class="inline-block bg-lapuntaAmarillo text-black text-sm font-bold py-2 px-6 rounded hover:bg-white transition-colors">Cotizar Estructuras</a>
+                            </div>
+                        </div>
+                        <div class="h-64 md:h-full bg-gray-200 rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" alt="Fabricación Estructuras" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Mantenimiento y Alquiler -->
+                <div class="revelar">
+                    <h2 class="text-3xl font-black text-lapuntaAzulTexto italic mb-8 border-l-4 border-lapuntaAmarillo pl-4">Mantenimiento Industrial y Maquinaria</h2>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="h-64 md:h-full bg-gray-200 rounded-xl overflow-hidden shadow-lg order-2 md:order-1">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop" alt="Mantenimiento" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative bg-lapuntaAzulTexto rounded-xl p-8 overflow-hidden group shadow-lg order-1 md:order-2">
+                            <div class="absolute inset-0 bg-lapuntaOscuro opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="relative z-10">
+                                <span class="text-5xl mb-4 block">⚙️</span>
+                                <h3 class="text-2xl font-bold text-white mb-4">Operatividad Continua</h3>
+                                <p class="text-gray-300 mb-6">Mantenimiento preventivo y correctivo para plantas industriales. Recuperación y blindaje de componentes. Además, contamos con servicio de alquiler de maquinaria para proyectos a gran escala.</p>
+                                <a href="https://wa.me/51987180419" target="_blank" class="inline-block bg-lapuntaAmarillo text-black text-sm font-bold py-2 px-6 rounded hover:bg-white transition-colors">Solicitar Mantenimiento</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= LLAMADO A LA ACCIÓN (CTA) ================= -->
+        <section class="bg-lapuntaAmarillo py-16 px-6">
+            <div class="max-w-5xl mx-auto text-center text-black">
+                <h2 class="text-3xl font-black italic mb-4">¿No encuentras el servicio exacto en la lista?</h2>
+                <p class="text-lg mb-8 font-medium">Nos adaptamos a las necesidades de tu industria. Escríbenos y agendemos una visita técnica.</p>
+                <a href="https://wa.me/51987180419" target="_blank" class="inline-flex items-center gap-2 bg-lapuntaOscuro hover:bg-white hover:text-lapuntaOscuro text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                    <span>💬</span> Contactar Asesor
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= PIE DE PÁGINA (FOOTER) UNIFICADO ================= -->
+    <footer class="bg-lapuntaGris pt-16 pb-8 px-6 text-gray-300 text-sm border-t-4 border-lapuntaAmarillo">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-gray-600 pb-10 mb-8">
+            
+            <!-- Columna 1: Marca -->
+            <div>
+                <a href="index.html">
+                    <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 mb-6 object-contain">
+                </a>
+                <p class="leading-relaxed mb-6">
+                    La Punta Ingeniería & Proyectos S.A.C.: Expertos en ingeniería y desarrollo de proyectos, construcción de obras civiles, fabricación de estructuras y mantenimiento industrial.
+                </p>
+                <!-- Redes Sociales -->
+                <div class="flex gap-3">
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="Facebook">f</a>
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Enlaces</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="index.html" class="hover:text-lapuntaAmarillo transition-colors">› Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-lapuntaAmarillo transition-colors">› Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Servicios</a></li>
+                    <li><a href="galeria.html" class="hover:text-lapuntaAmarillo transition-colors">› Galería</a></li>
+                    <li><a href="equipo.html" class="hover:text-lapuntaAmarillo transition-colors">› Equipo</a></li>
+                    <li><a href="contacto.html" class="hover:text-lapuntaAmarillo transition-colors">› Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Servicios</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Ingeniería de proyectos</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Obras civiles</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Estructuras metálicas</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Alquiler de maquinaria</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Mantenimiento industrial</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Contacto -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Contacto</h3>
+                <ul class="space-y-4 font-medium">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📍</span> 
+                        <span>Calle San Martín N° 236,<br>Punta de Bombón - Islay - Arequipa</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📞</span> 
+                        <a href="tel:987180419" class="hover:text-lapuntaAmarillo transition-colors">987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">💬</span> 
+                        <a href="https://wa.me/51987180419" target="_blank" class="hover:text-lapuntaAmarillo transition-colors">WhatsApp: +51 987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">✉️</span> 
+                        <a href="mailto:operaciones@lapuntaingenieria.com" class="hover:text-lapuntaAmarillo transition-colors break-all">operaciones@lapuntaingenieria.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- Derechos reservados -->
+        <div class="max-w-7xl mx-auto text-center md:text-left text-gray-500 text-xs">
+            <p>© 2026 La Punta Ingeniería & Proyectos S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIONES -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('navbar-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.revelar').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

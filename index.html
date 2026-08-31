@@ -53,23 +53,35 @@
 </head>
 <body class="m-0 p-0 font-sans box-border bg-gray-100">
 
-    <!-- ================= BARRA DE NAVEGACIÓN ================= -->
     <nav class="sticky top-0 z-50 bg-lapuntaGris flex justify-between items-center px-6 md:px-12 py-4 shadow-lg">
-    <a href="index.html" class="flex items-center no-underline" aria-label="Ir al inicio de La Punta S.A.C.">
-       <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
-    </a>
-        <button id="mobile-menu" class="md:hidden text-white text-3xl cursor-pointer border-2 border-lapuntaAmarillo px-3 rounded-lg">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center no-underline" aria-label="Ir al inicio de La Punta S.A.C.">
+            <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
+        </a>
+
+        <!-- Botón de hamburguesa para celulares -->
+        <button id="mobile-menu" class="md:hidden text-white text-3xl cursor-pointer border-2 border-lapuntaAmarillo px-3 rounded-lg hover:bg-white/10">
             ☰
         </button>
-        <div id="navbar-links" class="hidden md:flex absolute md:static top-[70px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
-            <a href="#" class="text-lapuntaAmarillo font-semibold hover:text-lapuntaAmarillo">Inicio</a> 
-            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Nosotros</a>
-            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Servicios</a>
-            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Galería</a>
-            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo">Contacto</a>
-            <a href="#" class="md:hidden bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full w-4/5 mx-auto mt-4">📱 Cotiza ahora</a>
+
+        <!-- Enlaces -->
+        <div id="navbar-links" class="hidden md:flex absolute md:static top-[90px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
+            <a href="index.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Inicio</a> 
+            <a href="nosotros.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Nosotros</a>
+            <a href="servicios.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Servicios</a>
+            <a href="galeria.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Galería</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Equipo</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Contacto</a>
+            
+            <!-- Botón de celular -->
+            <a href="https://wa.me/51987180419" target="_blank" class="md:hidden inline-block bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full mx-auto w-4/5 mt-4 no-underline">
+                📱 Cotiza ahora
+            </a>
         </div>
-        <a href="#" class="hidden md:flex bg-lapuntaAmarillo text-black py-3 px-6 rounded-lg font-bold items-center gap-2 hover:scale-105 transition-transform">
+
+        <!-- Botón de escritorio -->
+        <a href="https://wa.me/51987180419" target="_blank" class="hidden md:flex bg-lapuntaAmarillo hover:bg-lapuntaHover text-[#111] py-3 px-6 rounded-lg no-underline font-bold items-center gap-2 whitespace-nowrap transition-transform hover:scale-105">
             <span>📱</span> Cotiza ahora
         </a>
     </nav>
@@ -116,78 +128,360 @@
             </div>
         </div>
     </section>
+<!-- ================= SECCIÓN NOSOTROS Y CERTIFICACIÓN ================= -->
+    <section id="nosotros" class="py-20 px-6 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <!-- Columna Izquierda: Texto -->
+            <div class="revelar">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                    <span class="text-lapuntaAzulTexto font-bold tracking-widest text-xs uppercase">Sobre Nosotros</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-lapuntaAzulTexto italic mb-6">
+                    Construyendo el futuro industrial del sur del Perú
+                </h2>
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                    En <strong>La Punta Ingeniería & Proyectos S.A.C.</strong>, somos una empresa con sede en Punta de Bombón (Islay, Arequipa). Nos especializamos en brindar soluciones integrales de ingeniería, obras civiles y metalmecánica para los sectores industrial, minero y de construcción.
+                </p>
+                <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                    Operamos formalmente bajo el <strong>RUC 20614911132</strong>, garantizando profesionalismo, calidad y cumplimiento estricto en los plazos de entrega para todos nuestros socios comerciales.
+                </p>
+                
+                <!-- Puntos Clave de Valores -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-lapuntaAmarillo text-black w-8 h-8 rounded-full flex items-center justify-center font-bold">✓</span>
+                        <span class="font-bold text-lapuntaAzulTexto">Calidad Garantizada</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-lapuntaAmarillo text-black w-8 h-8 rounded-full flex items-center justify-center font-bold">✓</span>
+                        <span class="font-bold text-lapuntaAzulTexto">Seguridad Industrial</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-lapuntaAmarillo text-black w-8 h-8 rounded-full flex items-center justify-center font-bold">✓</span>
+                        <span class="font-bold text-lapuntaAzulTexto">Personal Calificado</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="bg-lapuntaAmarillo text-black w-8 h-8 rounded-full flex items-center justify-center font-bold">✓</span>
+                        <span class="font-bold text-lapuntaAzulTexto">Respaldo Institucional</span>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Columna Derecha: El Certificado -->
+            <div class="revelar relative mt-10 lg:mt-0" style="transition-delay: 200ms;">
+                <!-- Cuadro amarillo decorativo de fondo -->
+                <div class="absolute inset-0 bg-lapuntaAmarillo transform translate-x-4 translate-y-4 rounded-xl"></div>
+                
+                <!-- Contenedor de la imagen -->
+                <div class="relative bg-white p-2 rounded-xl shadow-2xl border border-gray-100 flex flex-col">
+                    
+                    <!-- IMAGEN DEL CERTIFICADO: 
+                         Aquí debes poner una captura en JPG/PNG de tu PDF del certificado -->
+                    <div class="bg-gray-100 h-64 md:h-80 overflow-hidden rounded-t-lg flex items-center justify-center border border-gray-200">
+                        <img src="assets/certificado_camara.png" alt="Certificado Cámara de Comercio de Arequipa" class="w-full h-full object-cover object-top opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                    
+                    <!-- Descripción del respaldo -->
+                    <div class="bg-lapuntaGris text-white p-6 rounded-b-lg border-t-4 border-lapuntaAmarillo">
+                        <h3 class="font-black text-xl text-lapuntaAmarillo mb-2 flex items-center gap-2">
+                            <span>🏆</span> Proveedor Certificado
+                        </h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Contamos con participación destacada en el <strong>Diagnóstico Empresarial Especializado</strong>[cite: 1], dentro del marco del <em>Programa de Fortalecimiento de Proveedores en el Valle de Tambo</em>[cite: 1].<br><br>
+                            <span class="text-white font-semibold flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-lapuntaAmarillo"></span> 
+                                Avalado por la Cámara de Comercio e Industria de Arequipa[cite: 1].
+                            </span>
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
  <!-- ================= SECCIÓN SERVICIOS CON FONDO ================= -->
     <section class="py-20 px-6 bg-cover bg-center relative" 
              style="background-image: linear-gradient(rgba(44, 51, 58, 0.85), rgba(44, 51, 58, 0.85)), url('assets/FONDO_OSCURO.jpg');">
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            
-            <!-- Encabezado de la sección -->
-            <div class="text-center revelar mb-16">
-                <div class="flex items-center justify-center gap-4 mb-4">
-                    <div class="h-0.5 w-10 bg-white"></div>
-                    <span class="text-white font-bold tracking-widest text-xs uppercase">Servicios que realizamos</span>
-                    <div class="h-0.5 w-10 bg-white"></div>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black text-lapuntaAmarillo italic mb-6">Soluciones metalmecánicas integrales</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Del diseño en Tekla y ANSYS al montaje en obra: cubrimos todo el ciclo de vida de tus estructuras y componentes.</p>
+    <div class="max-w-6xl mx-auto relative z-10">
+ 
+    <!-- Encabezado de la sección -->
+    <div class="text-center revelar mb-16">
+        <div class="flex items-center justify-center gap-4 mb-4">
+            <div class="h-0.5 w-10 bg-white"></div>
+            <span class="text-white font-bold tracking-widest text-xs uppercase">Servicios que realizamos</span>
+            <div class="h-0.5 w-10 bg-white"></div>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-black text-lapuntaAmarillo italic mb-6">Soluciones metalmecánicas integrales</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto">Ingeniería, construcción, fabricación, alquiler de maquinaria y mantenimiento: un solo equipo para cada etapa de tu proyecto.</p>
+    </div>
+ 
+    <!-- Grilla de Tarjetas -->
+    <div class="flex flex-wrap justify-center gap-8">
+ 
+        <!-- Tarjeta 1 -->
+        <div class="w-full md:w-[calc(50%_-_1rem)] lg:w-[calc(33.333%_-_1.334rem)] bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
+            <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                <span class="text-2xl text-lapuntaAzulTexto">📐</span>
+            </div>
+            <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Ingeniería y desarrollo de proyectos</h3>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ingeniería de precisión con software Tekla y ANSYS, desde el diseño hasta el desarrollo de detalle.</p>
+            <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+ 
+        <!-- Tarjeta 2 -->
+        <div class="w-full md:w-[calc(50%_-_1rem)] lg:w-[calc(33.333%_-_1.334rem)] bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 100ms;">
+            <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                <span class="text-2xl text-lapuntaAzulTexto">🏗️</span>
+            </div>
+            <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Construcción de obras civiles</h3>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ejecutamos obras civiles bajo estrictos estándares de calidad, seguridad y cumplimiento de plazos.</p>
+            <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+ 
+        <!-- Tarjeta 3 -->
+        <div class="w-full md:w-[calc(50%_-_1rem)] lg:w-[calc(33.333%_-_1.334rem)] bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 200ms;">
+            <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                <span class="text-2xl text-lapuntaAzulTexto">🏭</span>
+            </div>
+            <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Fabricación de estructuras metálicas</h3>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Producción de estructuras metalmecánicas con maquinaria avanzada y soldadura especializada.</p>
+            <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+ 
+        <!-- Tarjeta 4 -->
+        <div class="w-full md:w-[calc(50%_-_1rem)] lg:w-[calc(33.333%_-_1.334rem)] bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 300ms;">
+            <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                <span class="text-2xl text-lapuntaAzulTexto">🚜</span>
+            </div>
+            <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Alquiler de maquinaria y equipos</h3>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Contamos con una flota de maquinaria y equipos especializados disponibles para tu obra.</p>
+            <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+ 
+        <!-- Tarjeta 5 -->
+        <div class="w-full md:w-[calc(50%_-_1rem)] lg:w-[calc(33.333%_-_1.334rem)] bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 400ms;">
+            <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
+                <span class="text-2xl text-lapuntaAzulTexto">🔧</span>
+            </div>
+            <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Mantenimiento industrial</h3>
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed">Mantenimiento preventivo y correctivo para maximizar la vida útil de tus equipos e instalaciones.</p>
+            <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
+                Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </div>
+ 
+    </div>
+    <div class="mt-12 text-center revelar">
+                <!-- Cambia 'servicios.html' por el enlace real a tu página de servicios -->
+                <a href="servicios.html" class="inline-flex items-center gap-2 bg-lapuntaAmarillo hover:bg-lapuntaHover text-black font-bold py-3 px-8 rounded-full transition-transform hover:scale-105">
+                    Ver todos los servicios <span>→</span>
+                </a>
             </div>
 
-            <!-- Grilla de Tarjetas -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </div>
+</div>
+        
+    </section>
+    <!-- ================= SECCIÓN PROYECTOS ================= -->
+    <section class="bg-gray-50 py-20 px-6 relative">
+        <!-- Fondo opcional con un patrón sutil de puntos para darle textura -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#003a6b 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            
+            <!-- Encabezado de Proyectos -->
+            <div class="text-center revelar mb-16">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                    <span class="text-lapuntaAzulTexto font-bold tracking-widest text-xs uppercase">Proyectos</span>
+                    <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-lapuntaAzulTexto italic mb-6">Trabajos que hablan por nosotros</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Ingeniería y desarrollo de proyectos, obras civiles, fabricación de estructuras y mantenimiento industrial.</p>
+            </div>
+
+            <!-- Grilla de Proyectos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <!-- Tarjeta 1 -->
-                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group">
-                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
-                        <span class="text-2xl text-lapuntaAzulTexto">📐</span>
+                <!-- Proyecto 1: Estructuras -->
+                <div class="bg-lapuntaAzulTexto overflow-hidden shadow-xl revelar relative group">
+                    <!-- Etiqueta y esquina doblada -->
+                    <div class="absolute top-4 left-4 bg-white text-lapuntaAzulTexto text-[10px] font-black uppercase px-3 py-1 rounded-full z-10 shadow-md">
+                        Estructuras Metálicas
                     </div>
-                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Diseño e ingeniería</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Ingeniería de precisión de estructuras metálicas con software Tekla y ANSYS.</p>
-                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
-                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+                    <div class="absolute top-0 right-0 w-0 h-0 border-t-[35px] border-t-transparent border-r-[35px] border-r-lapuntaAmarillo z-10"></div>
+                    
+                    <!-- Imagen de Unsplash (referencial) -->
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" alt="Estructuras" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    
+                    <!-- Contenido azul inferior -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white italic mb-2">Fabricación de naves industriales</h3>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">Montaje y soldadura de precisión para estructuras metálicas de gran envergadura en el sector industrial.</p>
+                        <a href="https://wa.me/51987180419" target="_blank" class="inline-flex items-center gap-2 bg-lapuntaAmarillo hover:bg-white text-black text-sm font-bold py-2.5 px-4 rounded-lg transition-colors w-max">
+                            💬 Cotizar este proyecto
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 100ms;">
-                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
-                        <span class="text-2xl text-lapuntaAzulTexto">🏭</span>
+                <!-- Proyecto 2: Maquinaria -->
+                <div class="bg-lapuntaAzulTexto overflow-hidden shadow-xl revelar relative group" style="transition-delay: 100ms;">
+                    <div class="absolute top-4 left-4 bg-white text-lapuntaAzulTexto text-[10px] font-black uppercase px-3 py-1 rounded-full z-10 shadow-md">
+                        Mantenimiento
                     </div>
-                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Fabricación</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Producción de estructuras metalmecánicas con maquinaria avanzada y soldadura especializada.</p>
-                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
-                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+                    <div class="absolute top-0 right-0 w-0 h-0 border-t-[35px] border-t-transparent border-r-[35px] border-r-lapuntaAmarillo z-10"></div>
+                    
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop" alt="Mantenimiento" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white italic mb-2">Reparación de componentes</h3>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">Recuperación y blindaje de cucharones y tolvas para maquinaria pesada en el sector minero.</p>
+                        <a href="https://wa.me/51987180419" target="_blank" class="inline-flex items-center gap-2 bg-lapuntaAmarillo hover:bg-white text-black text-sm font-bold py-2.5 px-4 rounded-lg transition-colors w-max">
+                            💬 Cotizar este proyecto
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tarjeta 3 -->
-                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 200ms;">
-                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
-                        <span class="text-2xl text-lapuntaAzulTexto">🏗️</span>
+                <!-- Proyecto 3: Obras Civiles -->
+                <div class="bg-lapuntaAzulTexto overflow-hidden shadow-xl revelar relative group" style="transition-delay: 200ms;">
+                    <div class="absolute top-4 left-4 bg-white text-lapuntaAzulTexto text-[10px] font-black uppercase px-3 py-1 rounded-full z-10 shadow-md">
+                        Obras Civiles
                     </div>
-                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Montaje</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Montaje de estructuras y coberturas bajo estrictos estándares de seguridad y calidad.</p>
-                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
-                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+                    <div class="absolute top-0 right-0 w-0 h-0 border-t-[35px] border-t-transparent border-r-[35px] border-r-lapuntaAmarillo z-10"></div>
+                    
+                    <div class="h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Obras Civiles" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white italic mb-2">Construcción y desarrollo</h3>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed">Ejecución de obras civiles y diseño de proyectos de infraestructura con altos estándares de seguridad.</p>
+                        <a href="https://wa.me/51987180419" target="_blank" class="inline-flex items-center gap-2 bg-lapuntaAmarillo hover:bg-white text-black text-sm font-bold py-2.5 px-4 rounded-lg transition-colors w-max">
+                            💬 Cotizar este proyecto
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Tarjeta 4 -->
-                <div class="bg-white p-8 relative shadow-lg revelar esquina-amarilla hover:-translate-y-2 transition-transform duration-300 cursor-pointer group" style="transition-delay: 300ms;">
-                    <div class="bg-[#e6f0fa] w-14 h-14 rounded-md flex items-center justify-center mb-6">
-                        <span class="text-2xl text-lapuntaAzulTexto">🛡️</span>
-                    </div>
-                    <h3 class="text-2xl font-black text-lapuntaAzulTexto italic mb-3">Reparación y blindaje</h3>
-                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Recuperación, blindaje y reconstrucción de cucharones, blades y componentes mineros.</p>
-                    <a href="#" class="text-lapuntaAzulTexto font-bold text-sm flex items-center gap-1 group-hover:text-lapuntaAmarillo transition-colors">
-                        Ver detalle <span class="group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
-                </div>
+            </div>
+            
+            <!-- Botón Ver más trabajos -->
+            <div class="mt-12 text-center revelar">
+                <a href="#" class="inline-flex items-center gap-2 bg-lapuntaAzulTexto hover:bg-lapuntaOscuro text-white font-bold py-3 px-8 rounded-full transition-colors">
+                    Ver más trabajos <span>→</span>
+                </a>
+            </div>
 
+        </div>
+    </section>
+    <!-- ================= LLAMADO A LA ACCIÓN (CTA) ================= -->
+    <section class="bg-[#003a6b] py-14 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="max-w-2xl text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-black text-lapuntaAmarillo italic mb-3">
+                    ¿Listo para empezar tu proyecto?
+                </h2>
+                <p class="text-gray-200 text-lg">
+                    Cuéntanos qué necesitas y recibe una cotización sin compromiso en menos de 24 horas.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                <a href="https://wa.me/51987180419" target="_blank" class="bg-lapuntaAmarillo hover:bg-lapuntaHover text-black font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-transform hover:scale-105">
+                    <span class="text-xl">💬</span> WhatsApp
+                </a>
+                <a href="tel:987180419" class="border-2 border-white hover:bg-white hover:text-[#003a6b] text-white font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <span class="text-xl">📞</span> 987 180 419
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- ================= PIE DE PÁGINA (FOOTER) ================= -->
+    <footer class="bg-lapuntaGris pt-16 pb-8 px-6 text-gray-300 text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-gray-600 pb-10 mb-8">
+            
+            <!-- Columna 1: Marca -->
+            <div>
+                <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 mb-6 object-contain">
+                <p class="leading-relaxed mb-6">
+                    La Punta Ingeniería & Proyectos S.A.C.: Expertos en ingeniería y desarrollo de proyectos, construcción de obras civiles, fabricación de estructuras y mantenimiento industrial.
+                </p>
+                <!-- Redes Sociales (Iconos temporales) -->
+                <div class="flex gap-3">
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors">f</a>
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors">in</a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Enlaces</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Inicio</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Nosotros</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Servicios</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Galería</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Equipo</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Servicios</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Ingeniería de proyectos</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Obras civiles</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Estructuras metálicas</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Alquiler de maquinaria</a></li>
+                    <li><a href="#" class="hover:text-lapuntaAmarillo transition-colors">› Mantenimiento industrial</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Contacto -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Contacto</h3>
+                <ul class="space-y-4 font-medium">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📍</span> 
+                        <span>Calle San Martín N° 236,<br>Punta de Bombón - Islay - Arequipa</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📞</span> 
+                        <a href="tel:987180419" class="hover:text-lapuntaAmarillo transition-colors">987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">💬</span> 
+                        <a href="https://wa.me/51987180419" class="hover:text-lapuntaAmarillo transition-colors">WhatsApp: +51 987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">✉️</span> 
+                        <a href="mailto:operaciones@lapuntaingenieria.com" class="hover:text-lapuntaAmarillo transition-colors break-all">operaciones@lapuntaingenieria.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- Derechos reservados -->
+        <div class="max-w-7xl mx-auto text-center md:text-left text-gray-500 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 La Punta Ingeniería & Proyectos S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <!-- ================= SCRIPTS ================= -->
     <script>

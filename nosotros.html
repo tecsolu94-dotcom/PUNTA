@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | La Punta Ingeniería & Proyectos S.A.C.</title>
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- CONFIGURACIÓN DE COLORES DE LA PUNTA -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lapuntaGris: '#3b424a',
+                        lapuntaGrisFondo: '#2c333a',
+                        lapuntaOscuro: '#16202c',
+                        lapuntaAmarillo: '#ffcc00',
+                        lapuntaAzulTexto: '#003a6b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .revelar {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .revelar.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Clase para el pequeño hexágono decorativo de las tarjetas */
+        .tarjeta-valor {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .tarjeta-valor:hover {
+            transform: translateY(-8px);
+        }
+        .tarjeta-valor::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-width: 0 40px 40px 0;
+            border-style: solid;
+            border-color: transparent rgba(255, 204, 0, 0.2) transparent transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-lapuntaGris flex justify-between items-center px-6 md:px-12 py-4 shadow-lg">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center no-underline" aria-label="Ir al inicio de La Punta S.A.C.">
+            <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 md:h-24 w-auto object-contain">
+        </a>
+
+        <!-- Botón de hamburguesa para celulares -->
+        <button id="mobile-menu" class="md:hidden text-white text-3xl cursor-pointer border-2 border-lapuntaAmarillo px-3 rounded-lg hover:bg-white/10">
+            ☰
+        </button>
+
+        <!-- Enlaces -->
+        <div id="navbar-links" class="hidden md:flex absolute md:static top-[90px] left-0 w-full md:w-auto bg-lapuntaGris md:bg-transparent flex-col md:flex-row p-6 md:p-0 text-center gap-4 md:gap-8">
+            <a href="index.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Inicio</a> 
+            <a href="nosotros.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Nosotros</a>
+            <a href="servicios.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Servicios</a>
+            <a href="galeria.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Galería</a>
+            <a href="equipo.html" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Equipo</a>
+            <a href="#" class="text-white font-semibold hover:text-lapuntaAmarillo transition">Contacto</a>
+            
+            <!-- Botón de celular -->
+            <a href="https://wa.me/51987180419" target="_blank" class="md:hidden inline-block bg-lapuntaAmarillo text-black font-bold py-3 px-6 rounded-full mx-auto w-4/5 mt-4 no-underline">
+                📱 Cotiza ahora
+            </a>
+        </div>
+
+        <!-- Botón de escritorio -->
+        <a href="https://wa.me/51987180419" target="_blank" class="hidden md:flex bg-lapuntaAmarillo hover:bg-lapuntaHover text-[#111] py-3 px-6 rounded-lg no-underline font-bold items-center gap-2 whitespace-nowrap transition-transform hover:scale-105">
+            <span>📱</span> Cotiza ahora
+        </a>
+    </nav>
+
+    <main class="flex-1">
+        
+        <!-- ================= CABECERA DE LA PÁGINA (HERO PEQUEÑO) ================= -->
+        <section class="relative bg-lapuntaAzulTexto py-16 md:py-24 overflow-hidden text-center text-white">
+            <div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6">
+                <!-- Migas de pan (Breadcrumbs) -->
+                <nav class="mb-4 text-sm text-gray-300 flex justify-center items-center gap-2">
+                    <a href="index.html" class="hover:text-lapuntaAmarillo transition">Inicio</a>
+                    <span>›</span>
+                    <span class="font-semibold text-white">Nuestra empresa</span>
+                </nav>
+                <h1 class="text-4xl md:text-5xl font-black text-lapuntaAmarillo italic mb-4">Nuestra empresa</h1>
+                <p class="text-lg md:text-xl text-gray-200">
+                    Proyectos metalmecánicos, obras civiles e ingeniería con la meta permanente de CERO ACCIDENTES.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= QUIÉNES SOMOS ================= -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Texto -->
+                <div class="revelar">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                        <span class="text-lapuntaAzulTexto font-bold tracking-widest text-xs uppercase">Quiénes somos</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-lapuntaAzulTexto italic mb-6">
+                        Ingeniería y construcción con seguridad garantizada
+                    </h2>
+                    <div class="text-gray-600 text-lg leading-relaxed space-y-4">
+                        <p>
+                            Nos dedicamos a ejecutar proyectos integrales de <strong>ingeniería, obras civiles y metalmecánica</strong> para los sectores más importantes de la industria y minería del sur del Perú. Operamos desde Punta de Bombón garantizando innovación y respeto por el entorno.
+                        </p>
+                        <p>
+                            En <strong>La Punta Ingeniería & Proyectos S.A.C.</strong> disponemos de políticas y procedimientos rigurosos. Apoyamos a nuestros clientes a alcanzar sus metas de calidad, costo y tiempo, respaldados por la Cámara de Comercio e Industria de Arequipa, manteniendo siempre nuestro compromiso de <strong>CERO ACCIDENTES</strong>.
+                        </p>
+                    </div>
+                </div>
+                <!-- Imagen -->
+                <div class="revelar flex justify-center">
+                    <!-- Cuadro decorativo -->
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 bg-lapuntaAmarillo transform translate-x-4 translate-y-4 rounded-xl"></div>
+                        <img src="assets/certificado_camara.png" alt="Certificado Cámara de Comercio de Arequipa" class="w-full h-full object-cover object-top opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MISIÓN Y VISIÓN ================= -->
+        <section class="bg-lapuntaOscuro py-20 px-6 text-white relative">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 relative z-10">
+                
+                <div class="bg-lapuntaGrisFondo p-10 rounded-xl shadow-lg border border-gray-700 revelar tarjeta-valor">
+                    <div class="text-lapuntaAmarillo text-5xl mb-6">🎯</div>
+                    <h2 class="text-2xl font-black italic mb-4">Misión</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Diseñar, fabricar y construir proyectos de infraestructura con los más altos estándares. Cumplimos con las expectativas de nuestros clientes mineros e industriales, impulsamos el crecimiento de nuestro equipo y contribuimos al desarrollo sostenible de nuestra región.
+                    </p>
+                </div>
+
+                <div class="bg-lapuntaGrisFondo p-10 rounded-xl shadow-lg border border-gray-700 revelar tarjeta-valor" style="transition-delay: 150ms;">
+                    <div class="text-lapuntaAmarillo text-5xl mb-6">👁️</div>
+                    <h2 class="text-2xl font-black italic mb-4">Visión</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Ser reconocidos como la empresa líder en el sur del país en ofrecer soluciones integrales de ingeniería, obras civiles y mantenimiento metalmecánico, operando siempre bajo estrictos controles de seguridad, calidad y cuidado medioambiental.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NUESTROS VALORES ================= -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center revelar mb-16">
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                        <span class="text-lapuntaAzulTexto font-bold tracking-widest text-xs uppercase">Nuestros valores</span>
+                        <div class="h-0.5 w-10 bg-lapuntaAmarillo"></div>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-black text-lapuntaAzulTexto italic">Lo que nos define</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="bg-lapuntaAzulTexto text-white p-8 rounded-lg shadow-lg revelar tarjeta-valor">
+                        <div class="text-lapuntaAmarillo text-4xl mb-4">⚖️</div>
+                        <h3 class="text-xl font-bold mb-3">Ética</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Actuamos con honestidad moral, consideración, fidelidad y profesionalismo en cada proyecto.</p>
+                    </div>
+
+                    <div class="bg-lapuntaAzulTexto text-white p-8 rounded-lg shadow-lg revelar tarjeta-valor" style="transition-delay: 100ms;">
+                        <div class="text-lapuntaAmarillo text-4xl mb-4">🤝</div>
+                        <h3 class="text-xl font-bold mb-3">Honestidad</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Cualidad que nos conduce a pensar y actuar con total transparencia en relación con nuestros clientes.</p>
+                    </div>
+
+                    <div class="bg-lapuntaAzulTexto text-white p-8 rounded-lg shadow-lg revelar tarjeta-valor" style="transition-delay: 200ms;">
+                        <div class="text-lapuntaAmarillo text-4xl mb-4">🏅</div>
+                        <h3 class="text-xl font-bold mb-3">Excelencia</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Asumimos la obligación de esforzarnos por innovar, mejorar constantemente y entregar calidad superior.</p>
+                    </div>
+
+                    <div class="bg-lapuntaAzulTexto text-white p-8 rounded-lg shadow-lg revelar tarjeta-valor" style="transition-delay: 300ms;">
+                        <div class="text-lapuntaAmarillo text-4xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-bold mb-3">Seguridad y Salud</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Nuestro personal es nuestro recurso más valioso. Protegemos su integridad por encima de todo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LLAMADO A LA ACCIÓN (CTA) ================= -->
+        <section class="bg-lapuntaAzulTexto py-16 px-6">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div>
+                    <h2 class="text-3xl font-black text-lapuntaAmarillo italic mb-2">¿Listo para trabajar con nosotros?</h2>
+                    <p class="text-white text-lg">Cuéntanos tu proyecto y te enviaremos una propuesta a la medida.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+                    <a href="https://wa.me/51987180419" target="_blank" class="bg-lapuntaAmarillo text-black font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 hover:scale-105 transition-transform">
+                        <span>💬</span> WhatsApp
+                    </a>
+                    <a href="tel:987180419" class="border-2 border-white hover:bg-white text-white hover:text-lapuntaAzulTexto font-bold py-3 px-8 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                        <span>📞</span> 987 180 419
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= PIE DE PÁGINA (FOOTER) UNIFICADO ================= -->
+    <footer class="bg-lapuntaGris pt-16 pb-8 px-6 text-gray-300 text-sm border-t-4 border-lapuntaAmarillo">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-gray-600 pb-10 mb-8">
+            
+            <!-- Columna 1: Marca -->
+            <div>
+                <a href="index.html">
+                    <img src="assets/PUNTA.png" alt="La Punta S.A.C." class="h-16 mb-6 object-contain">
+                </a>
+                <p class="leading-relaxed mb-6">
+                    La Punta Ingeniería & Proyectos S.A.C.: Expertos en ingeniería y desarrollo de proyectos, construcción de obras civiles, fabricación de estructuras y mantenimiento industrial.
+                </p>
+                <!-- Redes Sociales -->
+                <div class="flex gap-3">
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="Facebook">f</a>
+                    <a href="#" class="bg-gray-600 hover:bg-lapuntaAmarillo hover:text-black w-9 h-9 rounded-full flex items-center justify-center font-bold transition-colors" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Enlaces</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="index.html" class="hover:text-lapuntaAmarillo transition-colors">› Inicio</a></li>
+                    <li><a href="nosotros.html" class="hover:text-lapuntaAmarillo transition-colors">› Nosotros</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Servicios</a></li>
+                    <li><a href="galeria.html" class="hover:text-lapuntaAmarillo transition-colors">› Galería</a></li>
+                    <li><a href="equipo.html" class="hover:text-lapuntaAmarillo transition-colors">› Equipo</a></li>
+                    <li><a href="contacto.html" class="hover:text-lapuntaAmarillo transition-colors">› Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Servicios -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Servicios</h3>
+                <ul class="space-y-3 font-medium">
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Ingeniería de proyectos</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Obras civiles</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Estructuras metálicas</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Alquiler de maquinaria</a></li>
+                    <li><a href="servicios.html" class="hover:text-lapuntaAmarillo transition-colors">› Mantenimiento industrial</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Contacto -->
+            <div>
+                <h3 class="text-lapuntaAmarillo font-black italic uppercase tracking-wider mb-6">Contacto</h3>
+                <ul class="space-y-4 font-medium">
+                    <li class="flex items-start gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📍</span> 
+                        <span>Calle San Martín N° 236,<br>Punta de Bombón - Islay - Arequipa</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">📞</span> 
+                        <a href="tel:987180419" class="hover:text-lapuntaAmarillo transition-colors">987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">💬</span> 
+                        <a href="https://wa.me/51987180419" target="_blank" class="hover:text-lapuntaAmarillo transition-colors">WhatsApp: +51 987 180 419</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-lapuntaAmarillo text-lg">✉️</span> 
+                        <a href="mailto:operaciones@lapuntaingenieria.com" class="hover:text-lapuntaAmarillo transition-colors break-all">operaciones@lapuntaingenieria.com</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <!-- Derechos reservados -->
+        <div class="max-w-7xl mx-auto text-center md:text-left text-gray-500 text-xs">
+            <p>© 2026 La Punta Ingeniería & Proyectos S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIONES -->
+    <script>
+        // 1. Menú Móvil
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('navbar-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+        });
+
+        // 2. Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.revelar').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
